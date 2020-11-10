@@ -95,10 +95,6 @@ func NewQueue(opt *taskq.QueueOptions) *Queue {
 	}
 
 	q.consumer = taskq.NewConsumer(q)
-	if err := q.consumer.Start(context.Background()); err != nil {
-		panic(err)
-	}
-
 	return q
 }
 
